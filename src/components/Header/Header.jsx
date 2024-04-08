@@ -1,15 +1,25 @@
 import React from "react"
 import logo_blur from "../../assets/image/logo_blur.png"
 import "./Header.css"
+import Slider from 'react-slick';
+import "./carousel.css"
+import homepage_introduce_1 from "../../assets/image/homepage_introduce_1.png";
 
 function Header(props) {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1
+    };
     return (
-        <nav className="background_img_header">
+        <nav className="background_img_header relative">
             <ul className="flex justify-around p-4">
                 <li>
                     <a href="" className="mb-0 uppercase text-white font-bold hover:underline">Homepage</a>
                 </li>
-                <li className="group inline-block relative">
+                <li className="group inline-block ">
                     <button
                         className="mb-0 uppercase text-white font-bold inline-flex items-center hover:underline"> Menu
                         <svg
@@ -24,24 +34,40 @@ function Header(props) {
                     </button>
 
                     {/*Sub Menu*/}
-                    <ul className="group-hover:block hidden transition absolute origin-top-right min-w-[800px] bg-white border border-slate-200 p-2 rounded-lg shadow-xl">
-                    <li className="">
-                            <a
-                                className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                                href="#">One</a>
-                        </li>
-                        <li className="">
-                            <a
-                                className="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                                href="#"
-                            >Two</a>
-                        </li>
-                        <li className="">
-                            <a
-                                className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                                href="#">Three is the magic number</a>
-                        </li>
-                    </ul>
+                    <div className="group-hover:block hidden transition absolute left-[5%] w-full max-w-[90%] bg-white border border-slate-200 p-2 rounded-lg shadow-xl">
+                        <div className="slider-container">
+                            <Slider {...settings}>
+                                <div>
+                                    <a className="bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap"
+                                       href="#">
+                                        <img className="mx-auto w-[10rem] object-cover" src={homepage_introduce_1}
+                                             alt="Saigon Station Food Introduce"/>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a className="bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap"
+                                       href="#">
+                                        <img className="mx-auto w-[10rem] object-cover" src={homepage_introduce_1}
+                                                     alt="Saigon Station Food Introduce"/>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a className="bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap"
+                                       href="#">
+                                        <img className="mx-auto w-[10rem] object-cover" src={homepage_introduce_1}
+                                                     alt="Saigon Station Food Introduce"/>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a className="bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap"
+                                       href="#">
+                                        <img className="mx-auto w-[10rem] object-cover" src={homepage_introduce_1}
+                                                     alt="Saigon Station Food Introduce"/>
+                                    </a>
+                                </div>
+                            </Slider>
+                        </div>
+                    </div>
                     {/*End Sub Menu*/}
                 </li>
                 <li>
