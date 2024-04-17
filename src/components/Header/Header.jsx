@@ -4,6 +4,7 @@ import "./Header.css"
 import Slider from 'react-slick';
 import "./carousel.css"
 import homepage_introduce_1 from "../../assets/image/homepage_introduce_1.png";
+import {Link} from "react-router-dom";
 
 function Header(props) {
     const settings = {
@@ -14,10 +15,12 @@ function Header(props) {
         slidesToScroll: 1
     };
     return (
-        <nav className="background_img_header relative">
+        <nav className="background_img_header relative z-10">
             <ul className="flex justify-around p-4">
                 <li>
-                    <a href="" className="mb-0 uppercase text-white font-bold hover:underline">Homepage</a>
+                    <Link to="/">
+                        <button className="mb-0 uppercase text-white font-bold hover:underline">Homepage</button>
+                    </Link>
                 </li>
                 <li className="group inline-block ">
                     <button
@@ -74,10 +77,16 @@ function Header(props) {
                     <img src={logo_blur} alt="Saigon Station Logo"/>
                 </li>
                 <li>
-                    <a href="" className="mb-0 uppercase text-white font-bold group-hover: hover:underline">Homepage</a>
+                    <Link to='/contact'>
+                        <button className="mb-0 uppercase text-white font-bold hover:underline">
+                            Contact
+                        </button>
+                    </Link>
                 </li>
                 <li>
-                    <a href="" className="mb-0 uppercase text-white font-bold hover:underline">Homepage</a>
+                    <Link>
+                        <button className="mb-0 uppercase text-white font-bold hover:underline">Event</button>
+                    </Link>
                 </li>
             </ul>
         </nav>
