@@ -12,7 +12,7 @@ function Footer() {
         <div>
             <footer className="bg-[#233000] p-4 text-white text-center">
                 <div className="container mx-auto p-4 border-b-2 border-dashed">
-                    <div className="grid grid-cols-3 ">
+                    <div className="grid lg:grid-cols-3 sm:grid-cols-2 md:text-normal text-xs">
                         <div className="flex gap-1">
                             <div className="">
                                 <img src={logo} alt=""/>
@@ -37,8 +37,8 @@ function Footer() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="text-start">
-                            <h4 className="mb-2 font-medium text-xl">Contact</h4>
+                        <div className="text-start md:mt-0 mt-4">
+                            <h4 className="mb-2 font-medium md:text-xl text-lg">Contact</h4>
                             <ul>
                                 <li className="mb-1">
                                     <div className="flex gap-1">
@@ -60,8 +60,8 @@ function Footer() {
                                 </li>
                             </ul>
                         </div>
-                        <div className="text-start">
-                            <h4 className="mb-2 font-medium text-xl">Address</h4>
+                        <div className="text-start lg:mt-0 mt-4">
+                            <h4 className="mb-2 font-medium md:text-xl text-lg">Address</h4>
                             <ul>
                                 <li className="mb-1">
                                     <div className="flex gap-1">
@@ -79,7 +79,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="container mx-auto mt-2">
+                <div className="container mx-auto mt-2 md:text-normal text-xs">
                     <p className="">© 2024 Saigon Station. All rights reserved.</p>
                 </div>
             </footer>
