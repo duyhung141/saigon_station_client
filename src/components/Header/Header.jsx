@@ -15,7 +15,7 @@ function Header(props) {
         slidesToScroll: 1
     };
     return (
-        <nav className="background_img_header relative z-10">
+        <nav className="background_img_header relative z-10 hidden md:block">
             <ul className="flex justify-around p-4">
                 <li>
                     <Link to="/">
@@ -41,32 +41,28 @@ function Header(props) {
                         <div className="slider-container">
                             <Slider {...settings}>
                                 <div>
-                                    <a className="bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap"
-                                       href="#">
+                                    <Link className="bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
                                         <img className="mx-auto w-[10rem] object-cover" src={homepage_introduce_1}
                                              alt="Saigon Station Food Introduce"/>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div>
-                                    <a className="bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap"
-                                       href="#">
+                                    <Link className="bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
                                         <img className="mx-auto w-[10rem] object-cover" src={homepage_introduce_1}
                                                      alt="Saigon Station Food Introduce"/>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div>
-                                    <a className="bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap"
-                                       href="#">
+                                    <Link className="bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
                                         <img className="mx-auto w-[10rem] object-cover" src={homepage_introduce_1}
                                                      alt="Saigon Station Food Introduce"/>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div>
-                                    <a className="bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap"
-                                       href="#">
+                                    <Link className="bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
                                         <img className="mx-auto w-[10rem] object-cover" src={homepage_introduce_1}
                                                      alt="Saigon Station Food Introduce"/>
-                                    </a>
+                                    </Link>
                                 </div>
                             </Slider>
                         </div>
@@ -84,13 +80,12 @@ function Header(props) {
                     </Link>
                 </li>
                 <li>
-                    <Link>
+                    <Link to="/event">
                         <button className="mb-0 uppercase text-white font-bold hover:underline">Event</button>
                     </Link>
                 </li>
             </ul>
         </nav>
-
     )
 }
 

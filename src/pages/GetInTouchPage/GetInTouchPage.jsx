@@ -33,12 +33,14 @@ function GetInTouchPage() {
                     </div>
                     <div className="">
                         <iframe
+                            title="branch 1"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.539897430315!2d55.388646775048784!3d25.11743167776238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f65873dc0d68b%3A0xee71974ddb5b16ee!2sSaigon%20Station!5e0!3m2!1sen!2s!4v1713334195764!5m2!1sen!2s"
                             width="600" height="450" style={{border:0}} allowFullScreen="" loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div className="">
                         <iframe
+                            title="branch 2"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.498490984415!2d55.269484075051096!3d25.18640637771795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69afefd7485d%3A0xfbb260f76333447b!2sSaigon%20Station%20Restaurant!5e0!3m2!1sen!2s!4v1713333930788!5m2!1sen!2s"
                             width="600" height="450" style={{border:0}} allowFullScreen="" loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"></iframe>
