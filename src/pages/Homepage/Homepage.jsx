@@ -18,7 +18,7 @@ function Homepage() {
         <>
             <div className="">
                 {/*<Header/>*/}
-                <div className="container mx-auto py-3">
+                <div className="container mx-auto pt-3">
                     <div className="p-10 mb-5">
                         <div className="xl:grid xl:grid-cols-12">
                             <div className="xl:col-span-4">
@@ -72,85 +72,84 @@ function Homepage() {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-                {false && <>
-                    <div className="mb-5 sm:grid sm:grid-cols-3">
-                        <div className="sm:col-span-1 w-full">
-                            <Link>
-                                <div className="relative group w-full h-[20rem]">
-                                    <img className="w-full h-full object-cover" src={homepage_introduce_2}
-                                         alt="Saigon Station Food Introduce"/>
-                                    <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>
-                                    <p className="absolute rounded top-[45%] left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View
-                                        details </p>
-                                </div>
-                            </Link>
-                        </div>
+                {/*{false && <>*/}
+                {/*    <div className="mb-5 sm:grid sm:grid-cols-3">*/}
+                {/*        <div className="sm:col-span-1 w-full">*/}
+                {/*            <Link>*/}
+                {/*                <div className="relative group w-full h-[20rem]">*/}
+                {/*                    <img className="w-full h-full object-cover" src={homepage_introduce_2}*/}
+                {/*                         alt="Saigon Station Food Introduce"/>*/}
+                {/*                    <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>*/}
+                {/*                    <p className="absolute rounded top-[45%] left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View*/}
+                {/*                        details </p>*/}
+                {/*                </div>*/}
+                {/*            </Link>*/}
+                {/*        </div>*/}
 
-                        <div className="sm:col-span-1 w-full sm:grid sm:grid-cols-2">
-                            <div className="">
-                                <Link>
-                                    <div className="relative group w-full h-[10rem] ">
-                                        <img className="w-full h-full object-cover" src={homepage_introduce_2}
-                                             alt="Saigon Station Food Introduce"/>
-                                        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>
-                                        <p className="absolute rounded top-1/3 left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View
-                                            Details</p>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="">
-                                <Link>
-                                    <div className="relative group w-full h-[10rem] ">
-                                        <img className="w-full h-full object-cover" src={homepage_introduce_2}
-                                             alt="Saigon Station Food Introduce"/>
-                                        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>
-                                        <p className="absolute rounded top-1/3 left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View
-                                            Details</p>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="">
-                                <Link>
-                                    <div className="relative group w-full h-[10rem] ">
-                                        <img className="w-full h-full object-cover" src={homepage_introduce_2}
-                                             alt="Saigon Station Food Introduce"/>
-                                        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>
-                                        <p className="absolute rounded top-1/3 left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View
-                                            Details</p>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="">
-                                <Link>
-                                    <div className="relative group w-full h-[10rem] ">
-                                        <img className="w-full h-full object-cover" src={homepage_introduce_2}
-                                             alt="Saigon Station Food Introduce"/>
-                                        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>
-                                        <p className="absolute rounded top-1/3 left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View
-                                            Details</p>
-                                    </div>
-                                </Link>
-                            </div>
-                        </div>
+                {/*        <div className="sm:col-span-1 w-full sm:grid sm:grid-cols-2">*/}
+                {/*            <div className="">*/}
+                {/*                <Link>*/}
+                {/*                    <div className="relative group w-full h-[10rem] ">*/}
+                {/*                        <img className="w-full h-full object-cover" src={homepage_introduce_2}*/}
+                {/*                             alt="Saigon Station Food Introduce"/>*/}
+                {/*                        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>*/}
+                {/*                        <p className="absolute rounded top-1/3 left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View*/}
+                {/*                            Details</p>*/}
+                {/*                    </div>*/}
+                {/*                </Link>*/}
+                {/*            </div>*/}
+                {/*            <div className="">*/}
+                {/*                <Link>*/}
+                {/*                    <div className="relative group w-full h-[10rem] ">*/}
+                {/*                        <img className="w-full h-full object-cover" src={homepage_introduce_2}*/}
+                {/*                             alt="Saigon Station Food Introduce"/>*/}
+                {/*                        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>*/}
+                {/*                        <p className="absolute rounded top-1/3 left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View*/}
+                {/*                            Details</p>*/}
+                {/*                    </div>*/}
+                {/*                </Link>*/}
+                {/*            </div>*/}
+                {/*            <div className="">*/}
+                {/*                <Link>*/}
+                {/*                    <div className="relative group w-full h-[10rem] ">*/}
+                {/*                        <img className="w-full h-full object-cover" src={homepage_introduce_2}*/}
+                {/*                             alt="Saigon Station Food Introduce"/>*/}
+                {/*                        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>*/}
+                {/*                        <p className="absolute rounded top-1/3 left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View*/}
+                {/*                            Details</p>*/}
+                {/*                    </div>*/}
+                {/*                </Link>*/}
+                {/*            </div>*/}
+                {/*            <div className="">*/}
+                {/*                <Link>*/}
+                {/*                    <div className="relative group w-full h-[10rem] ">*/}
+                {/*                        <img className="w-full h-full object-cover" src={homepage_introduce_2}*/}
+                {/*                             alt="Saigon Station Food Introduce"/>*/}
+                {/*                        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>*/}
+                {/*                        <p className="absolute rounded top-1/3 left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View*/}
+                {/*                            Details</p>*/}
+                {/*                    </div>*/}
+                {/*                </Link>*/}
+                {/*            </div>*/}
+                {/*        </div>*/}
 
-                        <div className="sm:col-span-1 w-full">
-                            <Link>
-                                <div className="relative group w-full h-[20rem] ">
-                                    <img className="w-full h-full object-cover" src={homepage_introduce_2}
-                                         alt="Saigon Station Food Introduce"/>
-                                    <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>
-                                    <p className="absolute rounded top-[45%] left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View
-                                        Details</p>
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
-                </>}
-                <div className="w-screen px-10 py-16 mb-5 intro relative">
+                {/*        <div className="sm:col-span-1 w-full">*/}
+                {/*            <Link>*/}
+                {/*                <div className="relative group w-full h-[20rem] ">*/}
+                {/*                    <img className="w-full h-full object-cover" src={homepage_introduce_2}*/}
+                {/*                         alt="Saigon Station Food Introduce"/>*/}
+                {/*                    <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>*/}
+                {/*                    <p className="absolute rounded top-[45%] left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View*/}
+                {/*                        Details</p>*/}
+                {/*                </div>*/}
+                {/*            </Link>*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</>}*/}
+                <div className="w-full px-10 py-16 mb-5 intro relative">
                     <div className="grid md:grid-cols-3 md:space-y-0 space-y-10 relative z-10">
                         <div className="flex-col items-center justify-center text-center">
                             <FoodBankIcon sx={{ fontSize: 100 }} color={'warning'}/>

@@ -1,8 +1,6 @@
 import React, {useRef} from 'react'
 import Slider from 'react-slick';
 import "./carousel.css"
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import menu1 from '../../assets/image/menu/menu-update_page-0001.jpg';
 import menu2 from '../../assets/image/menu/menu-update_page-0002.jpg';
 import menu3 from '../../assets/image/menu/menu-update_page-0003.jpg';
@@ -53,16 +51,21 @@ import menu47 from '../../assets/image/menu/menu-update_page-0047.jpg';
 import menu48 from '../../assets/image/menu/menu-update_page-0048.jpg';
 import menu49 from '../../assets/image/menu/menu-update_page-0049.jpg';
 import menu50 from '../../assets/image/menu/menu-update_page-0050.jpg';
+import {useLocation} from "react-router-dom";
+import queryString from 'query-string';
 
 
 function Menupage() {
+    const location = useLocation();
+    const queryParams = queryString.parse(location.search);
+    const start = parseInt(queryParams.start ?? 1) - 1;
     const settings = {
         dots: false,
         infinite: false,
         speed: 500,
         slidesToShow: 2,
         slidesToScroll: 2,
-        initialSlide: 0,
+        initialSlide: start,
         responsive: [
             {
                 breakpoint: 765,
