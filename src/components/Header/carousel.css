@@ -7,20 +7,20 @@
     border: 0;
     background: none;
     z-index: 1;
-    /*padding: 0 !important;*/
-    padding: 0px 15px !important;
+    padding: 15px;
 }
 
 .slick-prev:before, .slick-next:before {
     font-size: 50px !important;
     color: #09511D !important;
-    padding: 15px 0 ;
+    padding: 34px 0;
+    display: none;
 
 }
 
 
 .slick-prev {
-    left: -55px !important;
+    left: -65px !important;
 }
 
 /*.slick-prev:after {*/
@@ -29,7 +29,7 @@
 /*}*/
 
 .slick-next {
-    right: 20px;
+    right: -15px;
     text-align: right;
 }
 

@@ -178,7 +178,7 @@ function App() {
                     </div>
                 )}
                 <div className={isOpen ? "ml-[13rem] top-0 absolute" : "flex-1 relative"}>
-                    <button className="absolute top-0 left-0 p-2 rounded shadow" onClick={(e) => handleOpen()}>
+                    <button className="md:hidden block absolute z-10 top-0 left-0 p-2 rounded shadow" onClick={(e) => handleOpen()}>
                         <MenuIcon/>
                     </button>
                     {!isOpen && (
