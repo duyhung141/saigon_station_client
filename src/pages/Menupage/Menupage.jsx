@@ -93,9 +93,9 @@ function Menupage() {
     };
 
     return (
-        <div className="bg-[#7D9980] mx-auto p-10">
+        <div className="mx-auto sm:p-10 p-5">
             <div
-                className="slide-container relative xl:max-w-[70rem] lg:max-w-[55rem] md:max-w-[40rem] max-w-[15rem] mx-auto">
+                className="slide-container relative xl:max-w-[70rem] lg:max-w-[55rem] md:max-w-[40rem] max-w-[100%] mx-auto">
                 <Slider
                     ref={slider => {
                         sliderRef = slider;
@@ -107,14 +107,6 @@ function Menupage() {
                             <img key={index} className="sm:h-screen" src={menuImage} alt={"menu" + index}/>
                         ))
                     }
-                    <img className="sm:h-screen" src={menu1} alt=""/>
-                    <img className="sm:h-screen" src={menu2} alt=""/>
-                    <img className="sm:h-screen" src={menu3} alt=""/>
-                    <img className="sm:h-screen" src={menu4} alt=""/>
-                    <img className="sm:h-screen" src={menu5} alt=""/>
-                    <img className="sm:h-screen" src={menu6} alt=""/>
-                    <img className="sm:h-screen" src={menu7} alt=""/>
-                    <img className="sm:h-screen" src={menu8} alt=""/>
                 </Slider>
                 <button className="absolute top-1/2 -translate-y-1/2 right-0" onClick={next}>
                     <span

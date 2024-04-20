@@ -30,10 +30,11 @@ function Homepage() {
                                     home-made dishes. At Saigon Station, we believe that our diners will experience
                                     unforgettable moments.
                                 </p>
-                                <button
-                                    className="mt-2 px-5 py-3 rounded bg-[#6B4E4E] text-white hover:bg-[#916c6c] transition duration-300">View
+                                <a
+                                    href="/menu"
+                                    className="block w-fit mt-2 px-5 py-3 rounded bg-[#6B4E4E] text-white hover:bg-[#916c6c] transition duration-300">View
                                     Details
-                                </button>
+                                </a>
                                 {/*<div className="">*/}
                                 {/*    <img src={vegetable} alt=""/>*/}
                                 {/*</div>*/}
@@ -195,10 +196,11 @@ function Homepage() {
                             <p className="text-justify">You have the choices of Beef, chicken or also
                                 vegan Pho. It is indeed the Phovarite choice of food for Vietnamese as well as Vietnamese
                                 food lovers</p>
-                            <button
-                                className="rounded mt-2 px-5 py-3 bg-[#6B4E4E] text-white hover:bg-[#916c6c] transition duration-300">View
+                            <a
+                                href="/menu"
+                                className="block w-fit rounded mt-2 px-5 py-3 bg-[#6B4E4E] text-white hover:bg-[#916c6c] transition duration-300">View
                                 Details
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
