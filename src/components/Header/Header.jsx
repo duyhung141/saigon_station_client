@@ -3,7 +3,14 @@ import logo_blur from "../../assets/image/logo_blur.png"
 import "./Header.css"
 import "./carousel.css"
 import Slider from 'react-slick';
-import homepage_introduce_1 from "../../assets/image/homepage_introduce_1.png";
+import starter from "../../assets/image/header_menu/starter.jpeg";
+import salad from "../../assets/image/header_menu/salad.jpeg";
+import main_course from "../../assets/image/header_menu/main_course.jpeg";
+import sandwiches from "../../assets/image/header_menu/sandwiches.jpeg";
+import vegetarian from "../../assets/image/header_menu/vegetarian.jpeg";
+import desert from "../../assets/image/header_menu/desert.jpg";
+import special from "../../assets/image/header_menu/special.jpeg";
+import drink from "../../assets/image/header_menu/drink.JPG";
 
 function Header(props) {
     const settings = {
@@ -12,8 +19,6 @@ function Header(props) {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        initialSlide: 0,
-        arrows: false,
     };
     let sliderRef = useRef(null);
     const next = () => {
@@ -57,7 +62,7 @@ function Header(props) {
                                     <a href='/menu?start=2'
                                        className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
                                         <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={homepage_introduce_1}
+                                             src={starter}
                                              alt="Saigon Station Food Introduce"/>
                                         <p className="mt-1 text-center font-semibold text-white">Starter</p>
                                     </a>
@@ -66,7 +71,7 @@ function Header(props) {
                                     <a href='/menu?start=7'
                                        className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
                                         <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={homepage_introduce_1}
+                                             src={salad}
                                              alt="Saigon Station Food Introduce"/>
                                         <p className="mt-1 text-center font-semibold text-white">Salad</p>
                                     </a>
@@ -75,7 +80,7 @@ function Header(props) {
                                     <a href='/menu?start=9'
                                        className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
                                         <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={homepage_introduce_1}
+                                             src={main_course}
                                              alt="Saigon Station Food Introduce"/>
                                         <p className="mt-1 text-center font-semibold text-white">Main Course</p>
                                     </a>
@@ -84,7 +89,7 @@ function Header(props) {
                                     <a href='/menu?start=24'
                                        className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
                                         <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={homepage_introduce_1}
+                                             src={sandwiches}
                                              alt="Saigon Station Food Introduce"/>
                                         <p className="mt-1 text-center font-semibold text-white">Sandwiches</p>
                                     </a>
@@ -93,7 +98,7 @@ function Header(props) {
                                     <a href='/menu?start=27'
                                        className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
                                         <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={homepage_introduce_1}
+                                             src={vegetarian}
                                              alt="Saigon Station Food Introduce"/>
                                         <p className="mt-1 text-center font-semibold text-white">Vegetarian</p>
                                     </a>
@@ -102,7 +107,7 @@ function Header(props) {
                                     <a href='/menu?start=32'
                                        className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
                                         <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={homepage_introduce_1}
+                                             src={desert}
                                              alt="Saigon Station Food Introduce"/>
                                         <p className="mt-1 text-center font-semibold text-white">Desert</p>
                                     </a>
@@ -111,7 +116,7 @@ function Header(props) {
                                     <a href='/menu?start=34'
                                        className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
                                         <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={homepage_introduce_1}
+                                             src={special}
                                              alt="Saigon Station Food Introduce"/>
                                         <p className="mt-1 text-center font-semibold text-white">Special</p>
                                     </a>
@@ -120,7 +125,7 @@ function Header(props) {
                                     <a href='/menu?start=46'
                                        className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
                                         <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={homepage_introduce_1}
+                                             src={drink}
                                              alt="Saigon Station Food Introduce"/>
                                         <p className="mt-1 text-center font-semibold text-white">Drink</p>
                                     </a>

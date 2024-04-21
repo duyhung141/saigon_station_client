@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import Slider from 'react-slick';
 import "./carousel.css"
 import menu1 from '../../assets/image/menu/menu-update_page-0001.jpg';
@@ -53,13 +53,14 @@ import menu49 from '../../assets/image/menu/menu-update_page-0049.jpg';
 import menu50 from '../../assets/image/menu/menu-update_page-0050.jpg';
 import {useLocation} from "react-router-dom";
 import queryString from 'query-string';
-
+import * as MenuService from '../../services/MenuService'
 
 function Menupage() {
     const location = useLocation();
     const queryParams = queryString.parse(location.search);
     const start = parseInt(queryParams.start ?? 1) - 1;
     const [loading, setLoading] = useState(false);
+    const [datas, setDatas] = useState([]);
     const settings = {
         dots: false,
         infinite: false,
@@ -93,9 +94,21 @@ function Menupage() {
         sliderRef.slickPrev();
     };
 
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const datas = await MenuService.getAll();
+    //         if(datas){
+    //             setDatas(datas);
+    //         }
+    //     }
+    //
+    //     fetchData();
+    // },[])
+
     return (
         <>
-            {loading && <div className="fixed top-0 left-0 z-50 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+            {loading && <div
+                className="fixed top-0 left-0 z-50 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
                 <div role="status">
                     <svg aria-hidden="true"
                          className="w-8 h-8 text-gray-200 animate-spin mx-auto dark:text-gray-600 fill-blue-600"
