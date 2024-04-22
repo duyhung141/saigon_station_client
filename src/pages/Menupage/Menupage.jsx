@@ -58,7 +58,7 @@ import * as MenuService from '../../services/MenuService'
 function Menupage() {
     const location = useLocation();
     const queryParams = queryString.parse(location.search);
-    const start = parseInt(queryParams.start ?? 1) - 1;
+    const start = parseInt(queryParams.start ?? 0);
     const [loading, setLoading] = useState(false);
     const [datas, setDatas] = useState([]);
     const settings = {

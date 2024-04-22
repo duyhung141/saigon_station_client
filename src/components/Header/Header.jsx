@@ -1,4 +1,4 @@
-import React, {useRef} from "react"
+import React, {useEffect, useRef, useState} from "react"
 import logo_blur from "../../assets/image/logo_blur.png"
 import "./Header.css"
 import "./carousel.css"
@@ -12,7 +12,10 @@ import desert from "../../assets/image/header_menu/desert.jpg";
 import special from "../../assets/image/header_menu/special.jpeg";
 import drink from "../../assets/image/header_menu/drink.JPG";
 
+import * as MenuService from "../../services/MenuService"
+
 function Header(props) {
+    const [data, setData] = useState()
     const settings = {
         dots: false,
         infinite: false,
@@ -27,6 +30,17 @@ function Header(props) {
     const previous = () => {
         sliderRef.slickPrev();
     };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await MenuService.getAll();
+            if (data) {
+                setData(data)
+                console.log(data)
+            }
+        };
+        fetchData();
+    }, [])
     return (
         <nav className="background_img_header relative z-10 hidden md:block">
             <ul className="flex justify-around p-4">
@@ -58,78 +72,95 @@ function Header(props) {
                                 ref={slider => {
                                     sliderRef = slider;
                                 }}>
-                                <div>
-                                    <a href='/menu?start=2'
-                                       className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
-                                        <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={starter}
-                                             alt="Saigon Station Food Introduce"/>
-                                        <p className="mt-1 text-center font-semibold text-white">Starter</p>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href='/menu?start=7'
-                                       className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
-                                        <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={salad}
-                                             alt="Saigon Station Food Introduce"/>
-                                        <p className="mt-1 text-center font-semibold text-white">Salad</p>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href='/menu?start=9'
-                                       className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
-                                        <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={main_course}
-                                             alt="Saigon Station Food Introduce"/>
-                                        <p className="mt-1 text-center font-semibold text-white">Main Course</p>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href='/menu?start=24'
-                                       className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
-                                        <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={sandwiches}
-                                             alt="Saigon Station Food Introduce"/>
-                                        <p className="mt-1 text-center font-semibold text-white">Sandwiches</p>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href='/menu?start=27'
-                                       className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
-                                        <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={vegetarian}
-                                             alt="Saigon Station Food Introduce"/>
-                                        <p className="mt-1 text-center font-semibold text-white">Vegetarian</p>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href='/menu?start=32'
-                                       className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
-                                        <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={desert}
-                                             alt="Saigon Station Food Introduce"/>
-                                        <p className="mt-1 text-center font-semibold text-white">Desert</p>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href='/menu?start=34'
-                                       className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
-                                        <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={special}
-                                             alt="Saigon Station Food Introduce"/>
-                                        <p className="mt-1 text-center font-semibold text-white">Special</p>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href='/menu?start=46'
-                                       className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
-                                        <img className="mx-auto w-[10rem] h-[8rem] object-cover"
-                                             src={drink}
-                                             alt="Saigon Station Food Introduce"/>
-                                        <p className="mt-1 text-center font-semibold text-white">Drink</p>
-                                    </a>
-                                </div>
+                                {
+                                    data?.length > 0 && data?.map((item) => {
+                                        <>
+                                            <div>
+                                                <a href={`/menu?start=${item?.start}`}
+                                                   className="flex-col bg-[#09511D] border hover:bg-[#09511D]/80 py-2 px-4 block whitespace-no-wrap">
+                                                    <img className="mx-auto w-[10rem] h-[8rem] object-cover"
+                                                         src={item?.image}
+                                                         alt="Saigon Station Food Introduce"/>
+                                                    <p className="mt-1 text-center font-semibold text-white">{item?.name}</p>
+                                                </a>
+                                            </div>
+                                        </>
+                                    })
+                                }
+
+                                {/*<div>*/}
+                                {/*    <a href='/menu?start=2'*/}
+                                {/*       className="flex-col bg-[#04bf8a] border hover:bg-[#04bf8a]/80 py-2 px-4 block whitespace-no-wrap">*/}
+                                {/*        <img className="mx-auto w-[10rem] h-[8rem] object-cover"*/}
+                                {/*             src={starter}*/}
+                                {/*             alt="Saigon Station Food Introduce"/>*/}
+                                {/*        <p className="mt-1 text-center font-semibold text-white">Starter</p>*/}
+                                {/*    </a>*/}
+                                {/*</div>*/}
+                                {/*<div>*/}
+                                {/*    <a href='/menu?start=7'*/}
+                                {/*       className="flex-col bg-[#04bf8a] border hover:bg-[#04bf8a]/80 py-2 px-4 block whitespace-no-wrap">*/}
+                                {/*        <img className="mx-auto w-[10rem] h-[8rem] object-cover"*/}
+                                {/*             src={salad}*/}
+                                {/*             alt="Saigon Station Food Introduce"/>*/}
+                                {/*        <p className="mt-1 text-center font-semibold text-white">Salad</p>*/}
+                                {/*    </a>*/}
+                                {/*</div>*/}
+                                {/*<div>*/}
+                                {/*    <a href='/menu?start=9'*/}
+                                {/*       className="flex-col bg-[#04bf8a] border hover:bg-[#04bf8a]/80 py-2 px-4 block whitespace-no-wrap">*/}
+                                {/*        <img className="mx-auto w-[10rem] h-[8rem] object-cover"*/}
+                                {/*             src={main_course}*/}
+                                {/*             alt="Saigon Station Food Introduce"/>*/}
+                                {/*        <p className="mt-1 text-center font-semibold text-white">Main Course</p>*/}
+                                {/*    </a>*/}
+                                {/*</div>*/}
+                                {/*<div>*/}
+                                {/*    <a href='/menu?start=24'*/}
+                                {/*       className="flex-col bg-[#04bf8a] border hover:bg-[#04bf8a]/80 py-2 px-4 block whitespace-no-wrap">*/}
+                                {/*        <img className="mx-auto w-[10rem] h-[8rem] object-cover"*/}
+                                {/*             src={sandwiches}*/}
+                                {/*             alt="Saigon Station Food Introduce"/>*/}
+                                {/*        <p className="mt-1 text-center font-semibold text-white">Sandwiches</p>*/}
+                                {/*    </a>*/}
+                                {/*</div>*/}
+                                {/*<div>*/}
+                                {/*    <a href='/menu?start=27'*/}
+                                {/*       className="flex-col bg-[#04bf8a] border hover:bg-[#04bf8a]/80 py-2 px-4 block whitespace-no-wrap">*/}
+                                {/*        <img className="mx-auto w-[10rem] h-[8rem] object-cover"*/}
+                                {/*             src={vegetarian}*/}
+                                {/*             alt="Saigon Station Food Introduce"/>*/}
+                                {/*        <p className="mt-1 text-center font-semibold text-white">Vegetarian</p>*/}
+                                {/*    </a>*/}
+                                {/*</div>*/}
+                                {/*<div>*/}
+                                {/*    <a href='/menu?start=32'*/}
+                                {/*       className="flex-col bg-[#04bf8a] border hover:bg-[#04bf8a]/80 py-2 px-4 block whitespace-no-wrap">*/}
+                                {/*        <img className="mx-auto w-[10rem] h-[8rem] object-cover"*/}
+                                {/*             src={desert}*/}
+                                {/*             alt="Saigon Station Food Introduce"/>*/}
+                                {/*        <p className="mt-1 text-center font-semibold text-white">Desert</p>*/}
+                                {/*    </a>*/}
+                                {/*</div>*/}
+                                {/*<div>*/}
+                                {/*    <a href='/menu?start=34'*/}
+                                {/*       className="flex-col bg-[#04bf8a] border hover:bg-[#04bf8a]/80 py-2 px-4 block whitespace-no-wrap">*/}
+                                {/*        <img className="mx-auto w-[10rem] h-[8rem] object-cover"*/}
+                                {/*             src={special}*/}
+                                {/*             alt="Saigon Station Food Introduce"/>*/}
+                                {/*        <p className="mt-1 text-center font-semibold text-white">Special</p>*/}
+                                {/*    </a>*/}
+                                {/*</div>*/}
+                                {/*<div>*/}
+                                {/*    <a href='/menu?start=46'*/}
+                                {/*       className="flex-col bg-[#04bf8a] border hover:bg-[#04bf8a]/80 py-2 px-4 block whitespace-no-wrap">*/}
+                                {/*        <img className="mx-auto w-[10rem] h-[8rem] object-cover"*/}
+                                {/*             src={drink}*/}
+                                {/*             alt="Saigon Station Food Introduce"/>*/}
+                                {/*        <p className="mt-1 text-center font-semibold text-white">Drink</p>*/}
+                                {/*    </a>*/}
+                                {/*</div>*/}
+
                             </Slider>
                             <button className="absolute top-1/2 -translate-y-1/2 right-0" onClick={next}>
                                 <span
@@ -163,7 +194,7 @@ function Header(props) {
                 </li>
             </ul>
         </nav>
-    )
+    );
 }
 
 export default Header

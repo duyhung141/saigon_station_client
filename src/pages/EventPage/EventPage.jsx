@@ -1,10 +1,31 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import Event from "../../components/Event/Event";
 import EventSuggest from "../../components/Event/EventSuggest";
-
+import * as EventService from "../../services/EventService";
 function EventPage() {
     const [loading, setLoading] = useState(false);
+    const [data, setData] = useState([]);
+    const [recent, setRecent] = useState([]);
 
+    useEffect(() => {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 500)
+
+        const fetchData = async () => {
+            const data = await EventService.getAll();
+            const recent = await EventService.getRecent();
+            if(data){
+                setData(data);
+            }
+            if (recent){
+                setRecent(recent);
+            }
+        }
+
+        fetchData();
+    },[])
     return (
         <>
             {loading && <div className="fixed top-0 left-0 z-50 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
@@ -25,13 +46,16 @@ function EventPage() {
             <div className="container mx-auto px-5 py-10">
                 <div className="md:grid md:grid-cols-3 md:space-x-2">
                     <div className="md:grid md:grid-cols-2 md:col-span-2">
-                        <Event/>
-                        <Event/>
-                        <Event/>
-                        <Event/>
+                        {data?.map((event, index) => (
+                            <Event key={index} data={event}/>
+                        ))}
+                        {/*<Event/>*/}
+                        {/*<Event/>*/}
+                        {/*<Event/>*/}
+                        {/*<Event/>*/}
                     </div>
                     <div className="col-span-1">
-                        <EventSuggest/>
+                        <EventSuggest data = {recent}/>
                     </div>
                 </div>
 
