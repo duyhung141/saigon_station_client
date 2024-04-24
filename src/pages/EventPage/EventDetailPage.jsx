@@ -52,7 +52,7 @@ function EventDetailPage() {
                                     <img className="w-full max-h-[30rem]" src={data?.image} alt=""/>
                                 </div>
                                 <div className="">
-                                    <span style={{fontFamily: 'Roboto'}}><CalendarMonthIcon color="warning"/> 14/01/2024</span>
+                                    <span style={{fontFamily: 'Roboto'}}><CalendarMonthIcon color="warning"/> {data?.createdAt}</span>
                                 </div>
                                 <div className="py-3 border-b">
                                     <h1 className="font-bold text-3xl">{data?.tittle}</h1>
