@@ -188,7 +188,7 @@ function App() {
                                 <Route path="/menu" element={<Menupage/>}/>
                                 <Route path="/contact" element={<GetInTouchPage/>}/>
                                 <Route path="/event" element={<EventPage/>}/>
-                                <Route path="/event/id" element={<EventDetailPage/>}/>
+                                <Route path="/event/:id" element={<EventDetailPage/>}/>
                                 <Route path="/sidebar" element={<Sidebar/>}/>
                             </Routes>
                             <Footer/>

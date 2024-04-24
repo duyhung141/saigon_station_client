@@ -60,7 +60,7 @@ function Menupage() {
     const queryParams = queryString.parse(location.search);
     const start = parseInt(queryParams.start ?? 0);
     const [loading, setLoading] = useState(false);
-    const [datas, setDatas] = useState([]);
+    const [data, setData] = useState([]);
     const settings = {
         dots: false,
         infinite: false,
@@ -94,16 +94,16 @@ function Menupage() {
         sliderRef.slickPrev();
     };
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const datas = await MenuService.getAll();
-    //         if(datas){
-    //             setDatas(datas);
-    //         }
-    //     }
-    //
-    //     fetchData();
-    // },[])
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await MenuService.getAll();
+            if (data) {
+                setData(data);
+            }
+        }
+
+        fetchData();
+    }, [])
 
     return (
         <>
@@ -133,8 +133,10 @@ function Menupage() {
                         {...settings}
                     >
                         {
-                            menuImages.map((menuImage, index) => (
-                                <img key={index} className="sm:h-screen" src={menuImage} alt={"menu" + index}/>
+                            data?.map((group, index) => (
+                                group?.images?.map((item, index) => (
+                                    <img key={index} className="sm:h-screen" src={item}/>
+                                ))
                             ))
                         }
                     </Slider>
