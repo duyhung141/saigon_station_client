@@ -3,15 +3,15 @@ import Header from "../../components/Header/Header";
 import homepage_introduce_1 from "../../assets/image/homepage_introduce_1.png";
 import homepage_introduce_2 from "../../assets/image/homepage_introduce_2.png";
 import homepage_introduce_3 from "../../assets/image/homepage_introduce_3.png";
-import shrimp from "../../assets/image/shrimp.jpg";
+import pho2 from "../../assets/image/pho2.jpeg";
+import goi_cuon from "../../assets/image/goi_cuon.jpeg";
+import sandwiches from "../../assets/image/sandwiches.jpeg";
 import pho from "../../assets/image/pho.jpg";
-import table_food from "../../assets/image/table_food.jpg";
 import FoodBankIcon from '@mui/icons-material/FoodBank';
 import BrunchDiningIcon from '@mui/icons-material/BrunchDining';
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import tree from "../../assets/image/tree.png";
-import lecture from "../../assets/image/lecture.png";
-import {Link} from "react-router-dom";
+
 import './homepage.css'
 function Homepage() {
     return (
@@ -40,33 +40,34 @@ function Homepage() {
                             </div>
                             <div className="col-span-1"></div>
                             <div className="xl:col-span-7 xl:block hidden">
-                                <div className="mt-3 grid grid-cols-3">
-                                    <div className="">
-                                        <img className="object-cover" src={homepage_introduce_2}
+                                <div className="mt-3 flex justify-between">
+                                    <div className="col-span-1 w-[14rem]">
+                                        <img className="object-cover rounded" src={pho2}
                                              alt="Saigon Station Food Introduce"/>
                                     </div>
-                                    <div className="col-span-1">
-                                        <img className="object-cover" src={homepage_introduce_1}
+                                    <div className="relative w-[12.5rem] ">
+                                        <img className="absolute -bottom-10 object-cover rounded" src={sandwiches}
                                              alt="Saigon Station Food Introduce"/>
                                     </div>
-                                    <div className="relative w-full">
-                                        <img className="absolute translate-x-1/2 -bottom-5 object-cover" src={homepage_introduce_3}
+                                    <div className="col-span-1 w-[14rem]">
+                                        <img className="object-cover rounded" src={goi_cuon}
                                              alt="Saigon Station Food Introduce"/>
                                     </div>
                                 </div>
+
                             </div>
                             <div className="xl:hidden">
                                 <div className="mt-5 flex gap-2 ">
                                     <div className="">
-                                        <img className="w-24 h-24 object-cover rounded-full" src={homepage_introduce_2}
+                                        <img className="w-24 h-24 object-cover rounded-full" src={pho2}
                                              alt="Saigon Station Food Introduce"/>
                                     </div>
                                     <div className="">
-                                        <img className="w-24 h-24 object-cover rounded-full" src={homepage_introduce_1}
+                                        <img className="w-24 h-24 object-cover rounded-full" src={goi_cuon}
                                              alt="Saigon Station Food Introduce"/>
                                     </div>
                                     <div className="">
-                                        <img className="w-24 h-24 object-cover rounded-full" src={homepage_introduce_3}
+                                        <img className="w-24 h-24 object-cover rounded-full" src={sandwiches}
                                              alt="Saigon Station Food Introduce"/>
                                     </div>
                                 </div>
@@ -75,80 +76,6 @@ function Homepage() {
                     </div>
                 </div>
 
-                {/*{false && <>*/}
-                {/*    <div className="mb-5 sm:grid sm:grid-cols-3">*/}
-                {/*        <div className="sm:col-span-1 w-full">*/}
-                {/*            <Link>*/}
-                {/*                <div className="relative group w-full h-[20rem]">*/}
-                {/*                    <img className="w-full h-full object-cover" src={homepage_introduce_2}*/}
-                {/*                         alt="Saigon Station Food Introduce"/>*/}
-                {/*                    <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>*/}
-                {/*                    <p className="absolute rounded top-[45%] left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View*/}
-                {/*                        details </p>*/}
-                {/*                </div>*/}
-                {/*            </Link>*/}
-                {/*        </div>*/}
-
-                {/*        <div className="sm:col-span-1 w-full sm:grid sm:grid-cols-2">*/}
-                {/*            <div className="">*/}
-                {/*                <Link>*/}
-                {/*                    <div className="relative group w-full h-[10rem] ">*/}
-                {/*                        <img className="w-full h-full object-cover" src={homepage_introduce_2}*/}
-                {/*                             alt="Saigon Station Food Introduce"/>*/}
-                {/*                        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>*/}
-                {/*                        <p className="absolute rounded top-1/3 left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View*/}
-                {/*                            Details</p>*/}
-                {/*                    </div>*/}
-                {/*                </Link>*/}
-                {/*            </div>*/}
-                {/*            <div className="">*/}
-                {/*                <Link>*/}
-                {/*                    <div className="relative group w-full h-[10rem] ">*/}
-                {/*                        <img className="w-full h-full object-cover" src={homepage_introduce_2}*/}
-                {/*                             alt="Saigon Station Food Introduce"/>*/}
-                {/*                        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>*/}
-                {/*                        <p className="absolute rounded top-1/3 left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View*/}
-                {/*                            Details</p>*/}
-                {/*                    </div>*/}
-                {/*                </Link>*/}
-                {/*            </div>*/}
-                {/*            <div className="">*/}
-                {/*                <Link>*/}
-                {/*                    <div className="relative group w-full h-[10rem] ">*/}
-                {/*                        <img className="w-full h-full object-cover" src={homepage_introduce_2}*/}
-                {/*                             alt="Saigon Station Food Introduce"/>*/}
-                {/*                        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>*/}
-                {/*                        <p className="absolute rounded top-1/3 left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View*/}
-                {/*                            Details</p>*/}
-                {/*                    </div>*/}
-                {/*                </Link>*/}
-                {/*            </div>*/}
-                {/*            <div className="">*/}
-                {/*                <Link>*/}
-                {/*                    <div className="relative group w-full h-[10rem] ">*/}
-                {/*                        <img className="w-full h-full object-cover" src={homepage_introduce_2}*/}
-                {/*                             alt="Saigon Station Food Introduce"/>*/}
-                {/*                        <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>*/}
-                {/*                        <p className="absolute rounded top-1/3 left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View*/}
-                {/*                            Details</p>*/}
-                {/*                    </div>*/}
-                {/*                </Link>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-
-                {/*        <div className="sm:col-span-1 w-full">*/}
-                {/*            <Link>*/}
-                {/*                <div className="relative group w-full h-[20rem] ">*/}
-                {/*                    <img className="w-full h-full object-cover" src={homepage_introduce_2}*/}
-                {/*                         alt="Saigon Station Food Introduce"/>*/}
-                {/*                    <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50"></div>*/}
-                {/*                    <p className="absolute rounded top-[45%] left-1/2 -translate-x-1/2 bg-[#6B4E4E] text-white p-3 transform duration-300 group-hover:underline">View*/}
-                {/*                        Details</p>*/}
-                {/*                </div>*/}
-                {/*            </Link>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</>}*/}
                 <div className="w-full px-10 py-16 mb-5 intro relative">
                     <div className="grid md:grid-cols-3 md:space-y-0 space-y-10 relative z-10">
                         <div className="flex-col items-center justify-center text-center">
